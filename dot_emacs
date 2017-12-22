@@ -1,0 +1,28 @@
+(setq url-proxy-services '(("https" . "proxy.iil.intel.com:911")
+                           ("http" . "proxy.iil.intel.com:911")
+			   ("no_proxy" . "^.*intel.com")))
+
+(setq debug-on-error t)
+(setq url-debug t)
+
+;; configure MELPA
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+
+(column-number-mode t)
+(global-linum-mode t)
+(show-paren-mode t)
+(setq inhibit-startup-screen t)
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+(setq TeX-PDF-mode t)
+;; (add-hook 'LaTeX-mode-hook 'visual-line-mode)
+;; (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;; (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+;; (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
